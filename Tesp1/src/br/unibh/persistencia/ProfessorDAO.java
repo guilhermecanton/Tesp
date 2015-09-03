@@ -7,7 +7,8 @@ import java.util.List;
 import br.unibh.entidades.Professor;
 
 public class ProfessorDAO implements DAO<Professor, Long> {
-
+	
+	
 	public Professor find(Long id) {
 try {
 			
