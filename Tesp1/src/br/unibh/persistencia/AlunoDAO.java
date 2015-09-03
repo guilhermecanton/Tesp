@@ -37,8 +37,8 @@ public class AlunoDAO implements DAO<Aluno, Long> {
 	public Aluno find(String nome) {
 		try {
 			PreparedStatement p = JDBCUtil.getConnection()
-					.prepareStatement("select * from tb_aluno where nome like ? + '%'");
-			p.setString(1, nome);
+					.prepareStatement("select * from tb_aluno where nome like ?");
+			p.setString(1, nome + "%");
 			ResultSet res = p.executeQuery();
 
 			if (res.next()) {

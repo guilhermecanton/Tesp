@@ -18,16 +18,17 @@ public class Testes {
 		Aluno a = dao.find(2L);
 		Assert.assertEquals(a.getNome(), "José Pereira");
 	}
-	/*
+	
 	@Test
 	public void insertAluno() {
 		AlunoDAO dao = new AlunoDAO();
-		Aluno a = new Aluno(null, "Wilson Freitas", "35345678951", "12311115", new Date());
+		Aluno a = new Aluno(null, "Peter P", "22699678951", "12311115", new Date());
 		dao.insert(a);
-		Aluno a2 = dao.find(104L);
-		Assert.assertEquals(a2.getNome(), "Wilson Freitas");
+		Aluno b = dao.find("Peter P");
+		Assert.assertNotNull(b);
+		dao.delete(b);
 	}
-
+	
 	@Test
 	public void excluirAluno() {
 		AlunoDAO dao = new AlunoDAO();
@@ -94,11 +95,14 @@ public class Testes {
 	@Test
 	public void insereProfessor() {
 		ProfessorDAO daoProf = new ProfessorDAO();
-		Professor p = new Professor(null, "Alberto D", "33389878787", new BigDecimal("30000"));
+		Professor p = new Professor(null, "Magno A", "33389878787", new BigDecimal("30000"));
 		daoProf.insert(p);
-		Professor p1 = daoProf.find(105L);
-		Assert.assertEquals(p1.getNome(), "Alberto D");
+		Professor p1 = daoProf.find("Magno A");
+		Assert.assertNotNull(p1);
+		daoProf.delete(p1);
 	}
-	*/
+	
+	
+	
 
 }
