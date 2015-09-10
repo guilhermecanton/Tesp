@@ -33,7 +33,7 @@ public class ProfessorDAO implements DAO<Professor, Long> {
 	public Professor find(String nome) {
 		try {
 
-			String sql = ("select * from tb_aluno where nome like ?");
+			String sql = ("select * from tb_professor where nome like ?");
 			PreparedStatement comando = JDBCUtil.getConnection().prepareStatement(sql);
 			comando.setString(1, nome + "%");
 			ResultSet res = comando.executeQuery();

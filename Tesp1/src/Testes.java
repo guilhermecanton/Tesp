@@ -11,7 +11,7 @@ import br.unibh.persistencia.AlunoDAO;
 import br.unibh.persistencia.ProfessorDAO;
 
 public class Testes {
-
+	
 	@Test
 	public void findAluno() {
 		AlunoDAO dao = new AlunoDAO();
@@ -54,6 +54,13 @@ public class Testes {
 		Aluno a2 = dao.find(8L);
 		Assert.assertEquals(a2.getNome(), "Evaristo Costa");
 
+	}
+	
+	@Test
+	public void findAlunoByName(){
+		AlunoDAO dao = new AlunoDAO();
+		Aluno a = dao.find("José Pereira");
+		Assert.assertNotNull(a);
 	}
 
 	// TESTES DA CLASSE PROFESSOR
@@ -102,6 +109,15 @@ public class Testes {
 		daoProf.delete(p1);
 	}
 	
+	
+	@Test
+	public void findProfessorByName(){
+		ProfessorDAO daoProf = new ProfessorDAO();
+		Professor p = daoProf.find("Maite R. Roy");
+		Assert.assertNotNull(p);
+	}
+	
+
 	
 	
 
