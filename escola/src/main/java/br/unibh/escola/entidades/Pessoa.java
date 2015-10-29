@@ -27,13 +27,13 @@ public abstract class Pessoa {
 	@NotBlank
 	@Size(min = 5, max = 100)
 	@Column(length = 100, nullable = false, columnDefinition = "VARCHAR(100)")
-	@Pattern(regexp = "[A-Z]{2}\\d{3}", message = "deve conter apenas caracteres e acentos!")
+	@Pattern(regexp = "[A-Za-z\\s]*", message = "deve conter apenas caracteres e acentos!")
 	private String nome;
 	
 	
 	@Size(min = 11, max = 11)
 	@Column(length = 11, nullable = false, columnDefinition = "CHAR(11)")
-	@Pattern(regexp = "d{11}", message = "deve conter apenas numeros")
+	@Pattern(regexp = "\\d{11}", message = "deve conter apenas numeros")
 	private String cpf;
 	
 	public Pessoa(){}
